@@ -2,7 +2,7 @@ import ollama
 
 
 # Import file path if Knowledge base is needed
-with open('Knowledge base.txt', 'r') as kb:
+with open('/home/unearnedlogic/Desktop/AI/INOVA/Knowledge base.txt', 'r') as kb:
     my_base = kb.read()
 
 
@@ -24,4 +24,9 @@ def chat_with_ai(user_input):
     return ai_response
 
 while True:
-    print(chat_with_ai(input()))
+    user_input = input('Write to AI - ')
+    if user_input == '/bye':
+        break
+    else:
+        print(chat_with_ai(user_input))
+        print()
